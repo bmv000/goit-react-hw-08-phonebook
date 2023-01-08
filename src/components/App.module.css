@@ -1,0 +1,8 @@
+.section {
+  padding: 60px;
+}
+.part__title {
+  font-size: 32px;
+  font-weight: 900px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
