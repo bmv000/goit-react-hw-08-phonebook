@@ -10,6 +10,21 @@ class App extends Component {
     contacts: [],
     filter: '',
   };
+
+  componentDidMount() {
+    const saveContacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(saveContacts);
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
+
   handleFfindContactName = contactName => {
     return this.state.contacts.find(contact => contact.name === contactName);
   };
@@ -48,20 +63,6 @@ class App extends Component {
       contact.name.toLowerCase().includes(normalizedFilter)
     );
   };
-
-  componentDidMount() {
-    const contacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(contacts);
-    if (parsedContacts) {
-      this.setState({ contacts: parsedContacts });
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.contacts !== prevState.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-    }
-  }
 
   render() {
     const filterContacts = this.handleFilterContacts();
