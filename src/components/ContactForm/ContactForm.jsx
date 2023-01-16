@@ -1,37 +1,41 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import { PropTypes } from 'prop-types';
+
 import css from './ContactForm.module.css';
 
-export default class ContactForm extends Component {
-  static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-  };
+const ContactForm = ({onSubmit}) => {
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
 
-  state = {
-    name: '',
-    number: '',
-  };
-
-  handleNewContact = event => {
+  const handleNewContact = (event) => {
     const { name, value } = event.currentTarget;
-    this.setState({ [name]: value });
-  };
 
-  handleSubmit = event => {
+    switch (name) {
+      case 'name':
+        setName(value);
+        break;
+
+      case 'number':
+        setNumber(value);
+        break;
+
+      default:
+        return;
+    }
+  };
+ const handleSubmit = (event) => {
     event.preventDefault();
-    this.props.onSubmit(this.state, this.reset);
+    onSubmit(name, number, reset);
   };
 
-  reset = () => {
-    this.setState({
-      name: '',
-      number: '',
-    });
+  const reset = () => {
+   setName('');
+        setNumber('');
   };
-  render() {
-    const { name, number } = this.state;
+ 
+    
     return (
-      <form className={css.form} onSubmit={this.handleSubmit}>
+      <form className={css.form} onSubmit={handleSubmit}>
         <label className={css.label}>
           <span className={css.span}>Name</span>
           <input
@@ -42,7 +46,7 @@ export default class ContactForm extends Component {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
             value={name}
-            onChange={this.handleNewContact}
+            onChange={handleNewContact}
           />
         </label>
 
@@ -56,7 +60,7 @@ export default class ContactForm extends Component {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             value={number}
-            onChange={this.handleNewContact}
+            onChange={handleNewContact}
           />
         </label>
         <button className={css.button__submit} type="submit">
@@ -65,4 +69,12 @@ export default class ContactForm extends Component {
       </form>
     );
   }
-}
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
+
+export default ContactForm;
+
+
+

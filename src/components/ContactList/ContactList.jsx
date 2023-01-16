@@ -4,7 +4,7 @@ import css from './ContactList.module.css';
 
 export default function ContactList({ contacts, onDelete }) {
   return (
-    <ul className={css.contact__list}>
+    <ul className={css.contact}>
       {contacts.map(({ id, name, number }) => (
         <ContactElement
           key={id}
@@ -18,11 +18,4 @@ export default function ContactList({ contacts, onDelete }) {
   );
 }
 ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
-};
+  contacts: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,};
