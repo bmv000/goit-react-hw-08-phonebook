@@ -1,5 +1,7 @@
 .section {
+  
   padding: 60px;
+      text-align: center;
 }
 .part__title {
   font-size: 32px;

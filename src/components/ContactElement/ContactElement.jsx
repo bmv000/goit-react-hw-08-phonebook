@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/users/usersOperations';
+import * as usersOperations from '../../redux/users/usersOperations';
+
 import css from './ContactElement.module.css';
 
 export default function ContactElement({ id, name, number }) {
@@ -10,12 +11,12 @@ export default function ContactElement({ id, name, number }) {
   return (
     <li className={css.li}>
       <p className={css.contact}>
-        {name}: {number}
+        {name} : {number}
       </p>
       <button
         className={css.button__delete}
         type="button"
-        onClick={() => dispatch(deleteContact(id))}
+        onClick={() => dispatch(usersOperations.deleteContact(id))}
       >
         Delete
       </button>
