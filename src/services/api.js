@@ -17,3 +17,12 @@ export const token = {
     privateApi.defaults.headers.Authorization = null;
   },
 };
+
+//  export const token = {
+//   set(token) {
+//     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+//   },
+//   unset() {
+//     axios.defaults.headers.common.Authorization = '';
+//   },
+// };

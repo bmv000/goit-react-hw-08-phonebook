@@ -74,7 +74,7 @@ const LoginPage = () => {
           />
         </label>
 
-        {/* <ButtonAdding type="button" onClick={() => setIsPassword(prev => !prev)}>Show Password</ButtonAdding> */}
+        
         <button type="submit">Log in</button>
       </form>
     </>
