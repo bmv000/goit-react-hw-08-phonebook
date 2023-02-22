@@ -9,8 +9,12 @@ export const privateApi = axios.create({
 });
 
 export const token = {
-  set: token => {
-    privateApi.defaults.headers.Authorization = token;
+  // set: token => {
+  //   privateApi.defaults.headers.Authorization = token;
+  // },
+
+  set: data => {
+    privateApi.defaults.headers.Authorization = `${data.token_type} ${data.access_token}`;
   },
 
   remove: () => {
