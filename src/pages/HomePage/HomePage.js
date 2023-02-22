@@ -1,4 +1,4 @@
-import imageHome from './imageHome.jpeg';
+import imageHome from './imageHome.jpg';
 import  css  from './HomePage.module.css';
 const HomePage = () => {
   return (

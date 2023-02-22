@@ -4,7 +4,7 @@ import { authLoginThunk } from 'redux/auth/auth.thunks';
 import { selectAuthStatus } from 'redux/auth/auth.selectors';
 import { toast } from 'react-toastify';
 import {Loader} from 'components/Loader/Loader';
-
+import css from './LoginPage.module.css';
 const initialState = {
   email: '',
   password: '',
@@ -39,19 +39,17 @@ const LoginPage = () => {
   };
 
   return (
-    <>
+    <div className={css.login__page}>
       {status === 'loading' && <Loader />}
 
-     
-
-          <form onSubmit={handleSubmit}>
-               <h2>Please Log in Your Phonebook</h2>
-        <label>
+      <form className={css.login__form} onSubmit={handleSubmit}>
+        <h2 className={css.login__title}>Please Log in Your Phonebook</h2>
+        <label className={css.login__label}>
           Email
-                  <input
-                        name="email"
+          <input
+            className={css.login__input}
+            name="email"
             type="email"
-          
             required
             autoComplete="on"
             placeholder="name@email.com"
@@ -60,9 +58,10 @@ const LoginPage = () => {
           />
         </label>
 
-        <label>
+        <label className={css.login__label}>
           Password
           <input
+            className={css.login__input}
             // type={isPassword ? "password" : "text"}
             type="password"
             name="password"
@@ -74,10 +73,11 @@ const LoginPage = () => {
           />
         </label>
 
-        
-        <button type="submit">Log in</button>
+        <button className={css.login__button} type="submit">
+          Log in
+        </button>
       </form>
-    </>
+    </div>
   );
 };
 

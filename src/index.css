@@ -14,3 +14,65 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+  
+  
+  /* Стили для обнуления верхних отступов у элементов */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-top: 0;
+  }
+  /* Класс для обнуления базовых свойств у списков (ul) */
+  ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  /* Класс для обнуления базовых свойств у ссылок */
+  .link {
+    text-decoration: none;
+    color: inherit;
+  }
+  /* Свойства для корректного отображения картинок */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  /* Свойства для обнуления курсива у address */
+  
+  address {
+    font-style: normal;
+  }
+  .container {
+    
+  margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @media screen and (min-width: 480px) {
+        width: 480px;
+      }
+    
+      @media screen and (min-width: 768px) {
+        width: 768px;
+      }
+    
+      @media screen and (min-width: 1200px) {
+        width: 1200px;
+      }
+  }
+ 

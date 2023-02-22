@@ -1,0 +1,55 @@
+.login__page {
+    padding: 15px 50px;
+    background-image: linear-gradient(to right, rgba(76, 61, 111, 0.578), rgba(9, 188, 238, 0.594)),
+      url('./imageLogIn.jpg');
+      height: 600px; 
+}
+.login__form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;  
+}
+.login__title{
+   color: rgb(255, 145, 0); 
+    text-transform: uppercase;  
+}
+.login__label{
+    display: flex;
+  flex-direction: column;
+
+   max-width: 400px;
+  font-size: 24px;
+  font-weight: 600;
+    
+  color: rgb(247, 255, 255); 
+}
+.login__input{
+      padding: 15px;
+  font-size: 24px;
+  border: none;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0.5, 0.15),
+    0px 1px 1px rgba(0, 0, 0.5, 0.2), 1px 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+    color: rgb(255, 145, 0);
+}
+.login__input:hover,
+.login__input:focus {
+  border: none;
+  box-shadow: 5px 5px 20px 5px #75bfd8 inset;
+}
+.login__button{
+    width: 150px;
+  padding: 16px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgb(255, 145, 0); 
+  color: rgb(248, 249, 250);
+  cursor: pointer;
+  border-radius: 50px;  
+}
+.login__button:hover,
+.login__button:focus {
+  background-color: #1921fb;
+  color: white;
+}

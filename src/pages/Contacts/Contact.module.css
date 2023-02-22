@@ -1,0 +1,16 @@
+.contact__page{
+    padding: 30px 50px;
+    background-image: linear-gradient(
+    to right,
+    rgba(0, 6, 70, 0.979),
+    rgb(20, 247, 255)
+   );
+        
+} 
+.contact__title{
+    color: white;
+    margin-top: 20px;
+    font-size: 24px;
+    text-transform: uppercase;  
+     color: rgb(255, 145, 0); 
+} 

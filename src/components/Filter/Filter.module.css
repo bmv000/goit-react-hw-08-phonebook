@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
 
-  width: 400px;
+   max-width: 400px;
   font-size: 24px;
   font-weight: 600;
-  color: rgb(105, 107, 107);
+  color: rgb(234, 249, 249);
 }
 .filter__input {
   display: flex;

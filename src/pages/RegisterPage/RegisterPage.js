@@ -8,7 +8,7 @@ import { authLoginThunk } from '../../redux/auth/auth.thunks';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import {Loader} from '../../components/Loader/Loader';
-
+import css from './RegisterPage.module.css';
 // const year = new Date().getFullYear();
 const initialState = {
  name: '',
@@ -48,75 +48,77 @@ const RegisterPage = () => {
   };
 
   return (
-    <>
+    <div className={css.register__page}>
       {isLoading && <Loader />}
 
       <form
+        className={css.register__form}
         // action="#"
         // className="mt-5 mx-auto p-0"
         // style={{ width: '450px' }}
         onSubmit={handleSubmit}
       >
-        <h1>Please Sign In</h1>
+        <h1 className={css.register__title}>Please Sign In</h1>
 
-       
-          <label>
-            Email address
-            <input
-              // id="email"
-              name="email"
-              type="email"
-              //   autoComplete="username"
-              placeholder="name@email.com"
-              value={values.email}
-              onChange={handleChange}
-              // className="form-control"
-            />
-          </label>
-        
+        <label className={css.register__label}>
+          Email address
+          <input
+            className={css.register__input}
+            // id="email"
+            name="email"
+            type="email"
+            //   autoComplete="username"
+            placeholder="name@email.com"
+            value={values.email}
+            onChange={handleChange}
+            // className="form-control"
+          />
+        </label>
 
-          <label>
-            First Name
-            <input
-              // id="first_name"
-              name="name"
-              type="name"
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              // autoComplete="off"
-              placeholder="Name"
-              value={values.first_name}
-              onChange={handleChange}
-              // className="form-control"
-            />
-          </label>
-        
+        <label className={css.register__label}>
+          Name
+          <input
+            className={css.register__input}
+            // id="first_name"
+            name="name"
+            type="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            // autoComplete="off"
+            placeholder="Name"
+            value={values.first_name}
+            onChange={handleChange}
+            // className="form-control"
+          />
+        </label>
 
-       
-          <label>
-            Password
-            <input
-              // id="password"
-              name="password"
-              type="password"
-              required
-              autoComplete="off"
-              value={values.password}
-              onChange={handleChange}
-              // className="form-control"
-            />
-          </label>
-      
+        <label className={css.register__label}>
+          Password
+          <input
+            className={css.register__input}
+            // id="password"
+            name="password"
+            type="password"
+            required
+            autoComplete="off"
+            value={values.password}
+            onChange={handleChange}
+            // className="form-control"
+          />
+        </label>
 
         {/* <button type="submit" onClick={() => setIsPass(prev => !prev)}>
           toggle
         </button> */}
 
-        <Link to="/">Already has account?</Link>
+        <Link className={css.register__tologin} to="/login">
+          Already has account?
+        </Link>
 
-        <button type="submit">Sign In</button>
-      
+        <button className={css.register__button} type="submit">
+          Sign In
+        </button>
       </form>
-    </>
+    </div>
   );
 };
 
