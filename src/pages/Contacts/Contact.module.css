@@ -5,7 +5,9 @@
     rgba(0, 6, 70, 0.979),
     rgb(20, 247, 255)
    );
-        
+    margin-left: auto;
+    margin-right: auto;
+   max-width: 1200px;    
 } 
 .contact__title{
     color: white;

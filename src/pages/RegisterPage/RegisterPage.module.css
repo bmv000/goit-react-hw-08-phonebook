@@ -3,6 +3,9 @@
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
       url('./imageRegisterBack2.jpg');
       height: 550px;
+      margin-left: auto;
+    margin-right: auto;
+   max-width: 1200px;
 }
 .register__title{
    color: rgb(255, 145, 0); 
