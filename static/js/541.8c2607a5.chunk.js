@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[541],{1541:function(e,t,a){a.r(t),a.d(t,{default:function(){return c}});var n=a(7628),o="HomePage_container__uNu-e",r=a(184),c=function(){return(0,r.jsx)("div",{className:o,children:(0,r.jsx)("img",{src:n,alt:"Phone Book",width:"100%",height:"100%"})})}},7628:function(e,t,a){e.exports=a.p+"static/media/imageHome.673d46f8107df9429a56.jpg"}}]);
+//# sourceMappingURL=541.8c2607a5.chunk.js.map
