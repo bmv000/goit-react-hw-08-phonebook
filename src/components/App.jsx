@@ -1,18 +1,32 @@
 
-import ContactForm from './ContactForm/ContactForm';
-import ContactList from './ContactList/ContactList';
-import Filter from './Filter/Filter';
-import css from './App.module.css';
+
+// import css from './App.module.css';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout/Layout';
+import HomePage from 'pages/HomePage/HomePage';
+import RegisterPage from 'pages/RegisterPage/RegisterPage';
+import LoginPage from 'pages/LoginPage/LoginPage';
+import ContactsPage from 'pages/Contacts/contacts';
+import { PublicRoute } from '../components/AuthRoutes/PublicRoue';
+import { PrivateRoute } from '../components/AuthRoutes/PrivatRoute';
 
 const App = () => {
   return (
-    <section className={css.section}>
-      <h2 className={css.part__title}>Phonebook</h2>
-      <ContactForm />
-      <h2 className={css.part__title}>Contacts</h2>
-      <Filter />
-      <ContactList />
-    </section>
-  );
-};
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+
+        <Route path="" element={<PublicRoute />}>
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="login" element={<LoginPage />} />
+        </Route>
+        <Route path="" element={<PrivateRoute />}>
+          <Route path="contacts" element={<ContactsPage />} />
+        </Route>
+      </Route>
+    </Routes>
+  )
+}
 export default App;
+
+
