@@ -2,7 +2,7 @@
     padding: 15px 50px;
     background-image: linear-gradient(to right, rgba(76, 61, 111, 0.578), rgba(9, 188, 238, 0.594)),
       url('./imageLogIn.jpg');
-      height: 600px; 
+      height: 550px; 
 }
 .login__form{
   display: flex;
