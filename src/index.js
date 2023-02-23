@@ -11,12 +11,14 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/goit-react-hw-08-phonebook">
+    
       <Provider store={store}>
-        <PersistGate loading={<Loader />} persistor={persistor}>
-          <App />
+      <PersistGate loading={<Loader />} persistor={persistor}>
+        <BrowserRouter basename="goit-react-hw-08-phonebook">
+        <App />
+          </BrowserRouter>
         </PersistGate>
       </Provider>
-    </BrowserRouter>
+  
   </React.StrictMode>
 );

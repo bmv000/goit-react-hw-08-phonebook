@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { authLogoutThunk } from 'redux/auth/auth.thunks';
+import { authLogoutThunk } from 'redux/auth/auth.operations';
 import { toast } from 'react-toastify';
-import  css  from './UserMenu.module.css';
-
+import css from './UserMenu.module.css';
 
 const UserMenu = ({ mail }) => {
   const dispatch = useDispatch();

@@ -1,4 +1,5 @@
 export const authInitState = {
-  status: 'idle',
-  data: null,
+  user: { name: null, email: null },
+  token: null,
+  isLoggedIn: false,
 };

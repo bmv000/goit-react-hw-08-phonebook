@@ -2,12 +2,22 @@ import ContactForm from 'components/ContactForm/ContactForm';
 import Filter from 'components/Filter/Filter';
 import ContactList from 'components/ContactList/ContactList';
 import { Loader } from 'components/Loader/Loader';
-import { getIsLoading } from 'redux/selectors';
-import { useSelector } from 'react-redux';
+import { getContacts } from 'redux/selectors';
+import { fetchContacts } from '../../redux/users/usersOperations';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import css from './Contact.module.css';
 
 const ContactsPage = () => {
-  const isLoading = useSelector(getIsLoading);
+  // const isLoading = useSelector(getIsLoading);
+
+ const dispatch = useDispatch();
+ const { isLoading } = useSelector(getContacts);
+
+ useEffect(() => {
+   dispatch(fetchContacts());
+ }, [dispatch]);
+
 
   return (
     <div className={css.contact__page}>

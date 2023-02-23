@@ -1,19 +1,19 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { privateApi, token } from '../../services/api';
-import { selectAuthToken } from '../auth/auth.selectors';
+// import { createAsyncThunk } from '@reduxjs/toolkit';
+// import { privateApi, token } from '../../services/api';
+// import { selectToken } from '../auth/auth.selectors';
 
-export const getProfileThunk = createAsyncThunk(
-  'profile',
-  async (_, { getState, rejectWithValue }) => {
-    const stateToken = selectAuthToken(getState());
+// export const getProfileThunk = createAsyncThunk(
+//   'profile',
+//   async (_, { getState, rejectWithValue }) => {
+//     const stateToken = selectToken(getState());
 
-    if (!stateToken) {
-      return rejectWithValue();
-    }
+//     if (!stateToken) {
+//       return rejectWithValue();
+//     }
 
-    token.set(stateToken.token);
-    const { data } = await privateApi.get('/users/current');
+//     token.set(stateToken.token);
+//     const { data } = await privateApi.get('/users/current');
 
-    return data;
-  }
-);
+//     return data;
+//   }
+// );

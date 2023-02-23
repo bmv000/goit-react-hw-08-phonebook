@@ -1,29 +1,29 @@
 import { NavLink } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectAuthToken } from 'redux/auth/auth.selectors';
-import { selectProfileToken } from 'redux/profile/profile.selector';
-import { getProfileThunk } from 'redux/profile/profile.thunk';
+// import { useEffect } from 'react';
+import {useSelector } from 'react-redux';
+import { selectUserEmail, selectIsLogin } from 'redux/auth/auth.selectors';
+
 import UserMenu from '../UserMenu/UserMenu';
 import css from './Navigation.module.css';
 
 
 export const Navigation = () => {
-   const dispatch = useDispatch();
+  //  const dispatch = useDispatch();
+  const userEmail = useSelector(selectUserEmail);
+  const isLoggedIn = useSelector(selectIsLogin);
+  //  const token = useSelector(selectToken);
+  //  const profile = useSelector(selectProfileToken);
 
-   const token = useSelector(selectAuthToken);
-   const profile = useSelector(selectProfileToken);
-
-   useEffect(() => {
-     if (token) {
-       dispatch(getProfileThunk());
-     }
-   }, [token, dispatch]);
+  //  useEffect(() => {
+  //    if (token) {
+  //      dispatch(getProfileThunk());
+  //    }
+  //  }, [token, dispatch]);
   return (
     <nav className={css.navigation}>
-      {token && profile ? (
-        <UserMenu mail={profile.email} />
-      ) : (
+      {isLoggedIn ?
+        <UserMenu mail={userEmail} />
+        :
         <ul className={css.navigation__list}>
           <li>
             <NavLink className={css.navigation__link} to="/">
@@ -41,7 +41,10 @@ export const Navigation = () => {
             </NavLink>
           </li>
         </ul>
-      )}
+      }
     </nav>
   );
 };
+
+
+   
