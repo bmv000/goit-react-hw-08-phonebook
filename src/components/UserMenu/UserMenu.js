@@ -1,11 +1,13 @@
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+
+import { useDispatch, useSelector } from 'react-redux';
+import {selectUserEmail } from 'redux/auth/auth.selectors';
 import { authLogoutThunk } from 'redux/auth/auth.operations';
 import { toast } from 'react-toastify';
 import css from './UserMenu.module.css';
 
-const UserMenu = ({ mail }) => {
+const UserMenu = () => {
   const dispatch = useDispatch();
+  const userEmail = useSelector(selectUserEmail);
 
   const handleLogOut = async () => {
     try {
@@ -19,7 +21,7 @@ const UserMenu = ({ mail }) => {
 
   return (
     <div className={css.user}>
-      <p className={css.user__mail}>{mail}</p>
+      <p className={css.user__mail}>{userEmail}</p>
       <button className={css.user__button} type="button" onClick={handleLogOut}>
         Log out
       </button>
@@ -27,8 +29,8 @@ const UserMenu = ({ mail }) => {
   );
 };
 
-UserMenu.propTypes = {
-  mail: PropTypes.string.isRequired,
-};
+// UserMenu.propTypes = {
+//   mail: PropTypes.string.isRequired,
+// };
 
 export default UserMenu;

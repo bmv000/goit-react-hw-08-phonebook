@@ -7,13 +7,7 @@ import { Link } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 // import { Loader } from '../../components/Loader/Loader';
 import css from './RegisterPage.module.css';
-import * as yup from 'yup';
 
-let schema = yup.object().shape({
-  name: yup.string().required('Name is required'),
-  email: yup.string().nullable().email().required('Email is required'),
-  password: yup.string().required('Password is required'),
-});
 
 const RegisterPage = () => {
    const dispatch = useDispatch();
@@ -54,7 +48,7 @@ const handleSubmit = e => {
         // style={{ width: '450px' }}
         onSubmit={handleSubmit}
         autoComplete="on"
-        validationSchema={schema}
+        
       >
         <h1 className={css.register__title}>Please Sign In</h1>
 

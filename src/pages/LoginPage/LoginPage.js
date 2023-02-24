@@ -6,12 +6,7 @@ import { authLoginThunk } from 'redux/auth/auth.operations';
 // import { toast } from 'react-toastify';
 // import { Loader } from 'components/Loader/Loader';
 import css from './LoginPage.module.css';
-import * as yup from 'yup';
 
-let schema = yup.object().shape({
-  email: yup.string().nullable().email().required('Email is required'),
-  password: yup.string().required('Password is required'),
-});
 
 const LoginPage = () => {
 
@@ -46,7 +41,7 @@ const LoginPage = () => {
         className={css.login__form}
         onSubmit={handleSubmit}
         autoComplete="on"
-        validationSchema={schema}
+        
       >
         <h2 className={css.login__title}>Please Log in Your Phonebook</h2>
         <label className={css.login__label}>
