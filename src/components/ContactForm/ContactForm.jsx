@@ -34,7 +34,7 @@ const ContactForm = () => {
     const reset = {
       id: nanoid(),
       name,
-      phone: number,
+      number,
     };
     const ContactInList = contactName => {
       return contacts.find(contact => contact.name === contactName);
