@@ -7,9 +7,10 @@
    );
     margin-left: auto;
     margin-right: auto;
-   max-width: 1200px;    
+  max-width: 600px;   
 } 
 .contact__title{
+    text-align: center;
     color: white;
     margin-top: 20px;
     font-size: 24px;

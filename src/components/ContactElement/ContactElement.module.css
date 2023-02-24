@@ -1,15 +1,18 @@
 .li {
   display: flex;
    align-items: center;
-/* justify-content: space-between;  */
+justify-content: space-between; 
   gap: 30px;
+     border-bottom: 1px solid #ececec;
+    
 }
 .contact {
   font-size: 24px;
   font-weight: 600;
-  color: rgb(105, 107, 107);
-
-  
+  color: rgb(239, 245, 245);
+ margin-bottom: 0;
+ margin-top: 10px;
+  padding: 5px;
 }
 .button__delete {
   width: 70px;

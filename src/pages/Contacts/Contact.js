@@ -21,9 +21,9 @@ const ContactsPage = () => {
 
   return (
     <div className={css.contact__page}>
-      <h2 className={css.contact__title}>Phonebook</h2>
+      <h2 className={css.contact__title}>Add new contact</h2>
       <ContactForm />
-      <h3 className={css.contact__title}>Contacts</h3>
+      <h3 className={css.contact__title}> Your Contacts</h3>
       <Filter />
       {isLoading && <Loader />}
       <ContactList />
