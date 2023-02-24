@@ -11,7 +11,7 @@ import {
 import { authReducer } from './auth/auth.slice';
 import { contactsReducer } from './users/usersSlice';
 import { filterReducer } from './filter/filterSlice';
-// import { profileReducer } from './profile/profile.slice';
+
 
 export const store = configureStore({
   reducer: {

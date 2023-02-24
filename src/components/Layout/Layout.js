@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import { Loader } from 'components/Loader/Loader';
 
 export const Layout = () => {
-//   const { id } = useParams();
+
 
   return (
     <>
@@ -21,4 +21,3 @@ export const Layout = () => {
 };
 
 
-//  <header>{!id && <Navigation />}</header>;

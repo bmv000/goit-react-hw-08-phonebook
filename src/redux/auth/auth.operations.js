@@ -1,17 +1,3 @@
-// import { publicApi, privateApi, token } from '../../services/api';
-// import { createAsyncThunk } from '@reduxjs/toolkit';
-
-// export const authLoginThunk = createAsyncThunk('login', async values => {
-//   const { data } = await publicApi.post('/users/login', values);
-//   token.set(data.token);
-
-//   return data;
-// });
-
-// export const authLogoutThunk = createAsyncThunk('logout', async () => {
-//   const { data } = await privateApi.post('/users/logout');
-//   token.remove(data.token);
-// });
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
@@ -25,7 +11,7 @@ const token = {
     axios.defaults.headers.common.Authorization = '';
   },
 };
- 
+
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, { rejectWithValue }) => {
@@ -38,7 +24,6 @@ export const register = createAsyncThunk(
     }
   }
 );
-
 
 export const authLoginThunk = createAsyncThunk(
   'auth/login',
@@ -53,7 +38,6 @@ export const authLoginThunk = createAsyncThunk(
   }
 );
 
-
 export const authLogoutThunk = createAsyncThunk(
   'auth/logout',
   async (credentials, { rejectWithValue }) => {
@@ -67,22 +51,26 @@ export const authLogoutThunk = createAsyncThunk(
   }
 );
 
+const setAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
 export const fetchCurrentUser = createAsyncThunk(
-  'auth/currentUser',
-  async (_, { rejectWithValue, getState }) => {
-    const state = getState();
-    const persistToken = state.auth.token;
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
 
-    if (persistToken === null) {
-      return rejectWithValue();
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue('Unable to fetch user');
     }
-
     try {
-      token.set(persistToken);
+      setAuthHeader(persistedToken);
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      return rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
+

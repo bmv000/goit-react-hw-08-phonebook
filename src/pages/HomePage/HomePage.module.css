@@ -1,22 +1,22 @@
-
-.home__page{
-      padding: 15px 50px;
-    background-image: linear-gradient(to right, rgba(76, 61, 111, 0.578), rgba(9, 188, 238, 0)),
-      url('./imageHome.jpg');
-      height: 500px;
-      max-width: 1200px;
-      /* background-repeat: no-repeat; */
-      margin-left: auto;
-    margin-right: auto;
-   max-width: 600px;
-
-
+.home__page {
+  padding: 15px 50px;
+  background-image: linear-gradient(
+      to right,
+      rgba(76, 61, 111, 0.578),
+      rgba(9, 188, 238, 0)
+    ),
+    url('./imageHome.jpg');
+  height: 500px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
 }
- .home__title{
+.home__title {
   color: aquamarine;
   margin-top: 150px;
-text-align: center;
+  text-align: center;
   font-size: 50px;
-  text-transform: uppercase; 
-  opacity: 0.3; 
- }
+  text-transform: uppercase;
+  opacity: 0.3;
+}

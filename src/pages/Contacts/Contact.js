@@ -9,15 +9,14 @@ import { useEffect } from 'react';
 import css from './Contact.module.css';
 
 const ContactsPage = () => {
-  // const isLoading = useSelector(getIsLoading);
 
- const dispatch = useDispatch();
- const { isLoading } = useSelector(getContacts);
 
- useEffect(() => {
-   dispatch(fetchContacts());
- }, [dispatch]);
+  const dispatch = useDispatch();
+  const { isLoading } = useSelector(getContacts);
 
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <div className={css.contact__page}>

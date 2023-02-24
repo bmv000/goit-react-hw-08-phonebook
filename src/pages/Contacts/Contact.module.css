@@ -1,19 +1,19 @@
-.contact__page{
-    padding: 30px 50px;
-    background-image: linear-gradient(
+.contact__page {
+  padding: 30px 50px;
+  background-image: linear-gradient(
     to right,
     rgba(0, 6, 70, 0.979),
     rgb(20, 247, 255)
-   );
-    margin-left: auto;
-    margin-right: auto;
-  max-width: 600px;   
-} 
-.contact__title{
-    text-align: center;
-    color: white;
-    margin-top: 20px;
-    font-size: 24px;
-    text-transform: uppercase;  
-     color: rgb(255, 145, 0); 
-} 
+  );
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
+.contact__title {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: rgb(255, 145, 0);
+}
